@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="http://www2.far.fiocruz.br/farmanguinhos/templates/ja_sulfur/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+        <title>Intranet Farmanguinhos | Protótipo</title>
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Core CSS -->
+        <link href="css/style.css" rel="stylesheet" title="default">
+        <!-- Customiza a posicao do rodape -->
+        <link href="css/sticky-footer.css" rel="stylesheet">
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+
+        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+        <script src="js/ie-emulation-modes-warning.js"></script>
+
+        <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->
+        <!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+    <body>
+        
+        <div id="wrapper">
+
+            <!-- BARRA BRASIL -->
+            <div id="barra-brasil" style="background:#7F7F7F; height: 20px; padding:0 0 0 10px;display:block;"> 
+                <ul id="menu-barra-temp" style="list-style:none;">
+                    <li style="display:inline; float:left;padding-right:10px; margin-right:10px; border-right:1px solid #EDEDED"><a href="http://brasil.gov.br" style="font-family:sans,sans-serif; text-decoration:none; color:white;">Portal do Governo Brasileiro</a></li> 
+                    <li><a style="font-family:sans,sans-serif; text-decoration:none; color:white;" href="http://epwg.governoeletronico.gov.br/barra/atualize.html">Atualize sua Barra de Governo</a></li>
+                </ul>
+            </div> <!-- end barra brasil -->
+
+            <header id="header" role="banner" style="background: #23527c;">
+                <h3>Cabeçalho</h3>
+            </header><!-- end header -->
+
+            <main class="container" id="container" role="main" style="background: #ccc;">
+                <h1>INTRANET</h1>
+            </main><!-- end container geral -->
+
+            <footer class="footer" id="afooter" role="contentinfo" style="background: #255625;">
+                <h3>FOOTER</h3>
+            </footer><!-- end footer -->
+            
+            <!-- Voltar ao Topo -->
+            <div id="toTop" style="display: none;">Voltar ao topo</div>
+
+        </div><!-- end wrapper principal -->
+
+        <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="js/ie10-viewport-bug-workaround.js"></script>
+        <!-- Script Barra Brasil -->
+        <script defer="defer" src="//barra.brasil.gov.br/barra.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+                        $(function () { //Ancora do portal
+                            $(window).scroll(function () {
+                                if ($(this).scrollTop() !== 0) {
+                                    $('#toTop').fadeIn();
+                                } else {
+                                    $('#toTop').fadeOut();
+                                }
+                            });
+                            $('#toTop').click(function () {
+                                $('body,html').animate({scrollTop: 0}, 800);
+                            });
+                        });
+
+                        function setActiveStyleSheet(title) { //adiciona o contraste
+                            var i, a;
+                            for (i = 0; (a = document.getElementsByTagName("link")[i]); i++)
+                            {
+                                if (a.getAttribute("rel").indexOf("style") !== -1 && a.getAttribute("title")) {
+                                    a.disabled = true;
+                                    if (a.getAttribute("title") === title)
+                                        a.disabled = false;
+                                }
+                            }
+                        }
+                        // Copyright 2014-2015 Twitter, Inc.
+                        // Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+                        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                            var msViewportStyle = document.createElement('style')
+                            msViewportStyle.appendChild(
+                                    document.createTextNode(
+                                            '@-ms-viewport{width:auto!important}'
+                                            )
+                                    )
+                            document.querySelector('head').appendChild(msViewportStyle)
+                        }
+        </script>
+    </body>
+</html>
